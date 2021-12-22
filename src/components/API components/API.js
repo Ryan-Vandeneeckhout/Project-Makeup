@@ -88,13 +88,10 @@ function API() {
                   price={item.price}
                   rating={item.rating}
                     coloursProduct={item.product_colors.map((product) => {
-                    
-
-
                       return (
                         <div>
                           {product.hex_value}
-                          
+
                           {product.colour_name}
                         </div>
                         
