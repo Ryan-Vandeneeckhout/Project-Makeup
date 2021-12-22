@@ -1,0 +1,58 @@
+.landingpage {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgb(5, 5, 49);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+  font-family: Raleway;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
+  font-family: Raleway;
+}
+.homePageTitleContainer {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 100px;
+  border: solid goldenrod 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.storeFrontPicturesContainer {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  background-color: rgb(191, 20, 39);
+}
+.tagLine {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 5%;
+  height: 100%;
+  border-right: goldenrod solid 5px;
+}
+.imageGirlContainer {
+  width: 50%;
+  height: 100%;
+  background-image: url(../components/images/StoreFrontImages/guby-litso-makiiazh-pomada-krasnaia-devushka-lipstick.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5%;
+}

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Product from "./ProductItemCreator";
 import { ProductCatgory } from "./NavigationItems";
+import { Link } from 'react-router-dom'
 
 function API() {
 
@@ -11,6 +12,7 @@ function API() {
     const branding = document.querySelector("#brand option:checked").value;
     const ProductTypeSelected = document.querySelector("#productType option:checked").value;
     const ProductCatgorySelected = document.querySelector("#productCategory option:checked").value;
+
     axios({
       method: "GET",
       url: ` https://makeup-api.herokuapp.com/api/v1/products.json`,
@@ -21,16 +23,21 @@ function API() {
         product_category: `${ProductCatgorySelected}`,
      
       },
-    }).then((response) => {
-      setProductItem(response.data);
-    });
+      
+    }).then((jsonResponse) => {
+            
+    if (jsonResponse.length !== 0) {
+        setProductItem(jsonResponse.data);
+    }
+      
+  })
+
   }
 
   return (
     <div className="APISection">
-      <h2>Endless Demands Products</h2>
-      <div className="contentAPISectionContainer">
-        <nav className="NavAids">        
+      <h2 id="h2f">Endless Demands Products</h2>
+      <div className="contentAPISectionContainer">   
         <form> 
         <label className="sr-only">Select a brand</label>
           <select name="brand" id="brand" onChange={APICallFunction} className="customSelect brandSelect">         
@@ -43,6 +50,8 @@ function API() {
         <label className="sr-only">Select a Product Type Blush, Bronzer, Lipstick</label>
         <select name="productType" id="productType" onChange={APICallFunction} className="customSelect productSelect">
           <option className="productTypeClass" value="">Product Type: </option>
+            <option className="productTypeClass" value="nail_polish" id="nail_polish">Nail Polish</option>
+            <option className = "productTypeClass" value="eyebrow" id="eyebrow">EyeBrow</option>
           <option className = "productTypeClass" value="lipstick" id="lipstick">Lipstick</option>
           <option className = "productTypeClass" value="lip_liner" id="lip_liner">Lip Liner</option>
           <option className = "productTypeClass" value="foundation" id="foundation">Foundation</option>
@@ -61,15 +70,14 @@ function API() {
               );
             })}
         </select>
-    
         </form>
-
-        </nav>
         <div className="ProductListDivContainer">
           <ul className="ProductList">
             {ProductItem.map((item) => {
               return (
-                <Product
+                
+                <Link to={`/${item.id}`}>
+                  <Product
                   key={item.id}
                   brandname={item.brand}
                   productType={item.name}
@@ -79,7 +87,24 @@ function API() {
                   imagealt={item.api_featured_image}
                   price={item.price}
                   rating={item.rating}
-                />
+                    coloursProduct={item.product_colors.map((product) => {
+                    
+
+
+                      return (
+                        <div>
+                          {product.hex_value}
+                          
+                          {product.colour_name}
+                        </div>
+                        
+                      );
+                  })
+                    
+                    
+                    }
+                  />
+                </Link>
               );
             })}
           </ul>

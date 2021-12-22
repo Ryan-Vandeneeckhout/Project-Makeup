@@ -1,0 +1,32 @@
+.upperSite {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: rgb(5, 5, 49);
+  border-bottom: goldenrod solid 4px;
+}
+
+.upperSite ul {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.upperSite ul li {
+  padding: 25px;
+  margin: 0;
+}
+.upperSite ul a {
+  text-decoration: none;
+  padding: 0;
+  text-transform: uppercase;
+  color: white;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 24px;
+}
