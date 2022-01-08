@@ -5,12 +5,15 @@
   justify-content: flex-end;
   background-color: rgb(5, 5, 49);
   border-bottom: goldenrod solid 4px;
+  z-index: 100;
+  position: fixed;
 }
 
 .upperSite ul {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
   list-style: none;
   margin: 0;
@@ -21,6 +24,7 @@
   padding: 25px;
   margin: 0;
 }
+
 .upperSite ul a {
   text-decoration: none;
   padding: 0;
@@ -29,4 +33,83 @@
   font-family: Raleway;
   font-weight: 500;
   font-size: 24px;
+}
+
+.upperSite ul li:hover a {
+  color: gold;
+}
+.NavNumberFix {
+  font-family: "Arial", Times, serif;
+}
+
+i {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  background-size: cover;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: url("./images/rainbowText.gif");
+}
+
+.themeClick {
+  font-size: 30px;
+  border-radius: 90%;
+  border: none;
+  transition: ease-in-out 0.5s;
+  border: solid black 3px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.themeClick:hover {
+  color: white;
+  background-color: black;
+  border: solid white 3px;
+  cursor: pointer;
+}
+
+.open {
+  width: 500px;
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  top: 80px;
+  background-color: #2c0133;
+  border: goldenrod solid 4px;
+  border-right: none;
+  animation: opened 2s;
+}
+
+@keyframes opened {
+  0% {
+    width: 0;
+    opacity: 0;
+    border: none;
+    border: goldenrod solid 0px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 500px;
+    border: goldenrod solid 4px;
+  }
+}
+
+.closed {
+  display: none;
+}
+
+.rotating {
+  transform: rotate(360deg);
+}
+.MusicMenuButton {
+  width: 100%;
+  height: 75px;
 }

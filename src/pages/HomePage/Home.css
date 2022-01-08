@@ -1,0 +1,187 @@
+.landingpage {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgb(5, 5, 49);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+  font-family: Raleway;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+
+  background-clip: text;
+  color: transparent;
+  background-image: url("../images/globalImages/de6ii8x-2a4d1f2c-c4c2-45c4-ba68-966b0e9dad2e.gif");
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
+  font-family: Raleway;
+  background-size: cover;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  stroke: white;
+  stroke-width: 2px;
+  background-clip: text;
+  color: transparent;
+  background-image: url("../images/globalImages/rainbowText.gif");
+}
+.homePageTitleContainer {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  border: solid goldenrod 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: black;
+  color: white;
+  height: 500px;
+}
+.storeFrontPicturesContainer {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  background-color: rgb(191, 20, 39);
+  border-bottom: goldenrod solid 5px;
+}
+.tagLine {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 5%;
+  height: 100%;
+  border-right: goldenrod solid 5px;
+}
+.imageGirlContainer {
+  width: 50%;
+  height: 100%;
+  background-image: url("../images/homeImages/frontStore.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.imageGirlContainer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0%;
+  padding-left: 20px;
+  align-content: center;
+}
+
+.imageGirlContainer ul li img {
+  width: 100px;
+}
+.imageGirlContainer ul li {
+  width: fit-content;
+  margin-bottom: 10px;
+}
+.imageGirlContainer ul li:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.h3BeautyContainerHeading {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.imageGirlContainer h3 {
+  color: red;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  font-size: 68px;
+}
+.newProducts {
+  padding: 0 5%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #301934;
+}
+
+.newProductsContainer {
+  background-color: #301934;
+  width: 100%;
+}
+
+.newProductsContainerWrapper {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../images/homeImages/rainbowhorizontal.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+.look {
+  background-image: url("../images/homeImages/image4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.newProductsContainer h3 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: Raleway;
+  letter-spacing: 2px;
+}
+.newProductsContainer h4 {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.homePageProductChanger {
+  border-radius: 90%;
+  background-color: red;
+  border: solid white 2px;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+.buttonLines button:hover {
+  background-color: white;
+  border: solid red 2px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.buttonActive {
+  background-color: white;
+  border: solid red 2px;
+  transform: scale(1.1);
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.productHeadingName {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.product p {
+  text-transform: capitalize;
+}
+.ProductListDivContainer {
+  height: 70vh;
+  background-color: rgb(32, 32, 32);
+}

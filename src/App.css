@@ -237,26 +237,34 @@ h5 {
 
 .ProductList {
   list-style: none;
-  padding: 0;
-  justify-content: space-around;
   display: flex;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 20px;
   row-gap: 20px;
   flex-wrap: wrap;
+  margin: 0%;
+  padding: 5% 0;
 }
 
+.ProductListDivContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+}
 .ProductList li {
   border: solid grey 2px;
   border-radius: 25px;
   position: relative;
-  width: 200px;
+  margin: 10px;
+  width: 300px;
   height: 100%;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: white;
 }
 .ProductList li:after {
   content: "\A";
@@ -278,4 +286,51 @@ h5 {
   width: 100%;
   border-radius: 25px;
   height: 200px;
+}
+
+.storePageForm {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 30px;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.3981967787114846) 0%,
+    rgba(43, 43, 43, 0.9864320728291317) 100%
+  );
+  border: gold solid 2px;
+  border-left: none;
+  border-right: none;
+}
+
+.titleBanner {
+  width: 100%;
+  height: 100%;
+  background-color: gold;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  background-image: url(./pink-purple-sky-and-spring-nature-landscape-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+input[type="text"],
+select {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.categorySelect {
+  width: 300px;
+}
+.brandTypeClass {
+  text-transform: capitalize;
 }
