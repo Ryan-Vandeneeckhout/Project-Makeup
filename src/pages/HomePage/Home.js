@@ -16,8 +16,6 @@ const HomePage = () => {
   const FirstArrayValue2 = 4;
   const SecondArrayValue = 4; 
   const SecondArrayValue2 = 7; 
-  const ThirdArrayValue = 8;
-  const ThirdArrayValue2 = 11; 
   
   let [arrayOne, setArrayOne] = useState(true); 
   let [arrayTwo, setArrayTwo] = useState(false); 
@@ -99,7 +97,10 @@ const ChangeProductArrayTwo = () => {
         </div>
         <div className="newProductsContainer">
           <div className="newProductsContainerWrapper">
-        
+          <h3>Our New Arrivals</h3>
+            <NewArrivals homeValueNewArrivals={newArrivalsProductLine} />
+            <h3>Brands</h3>
+            <NewArrivals homeValueNewArrivals={newArrivalsBrandLine} />
           </div>
         </div>
       </div>
