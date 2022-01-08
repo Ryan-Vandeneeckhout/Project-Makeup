@@ -31,11 +31,11 @@ const QuotesApi = () => {
 
       axios({
           method: "GET",
-          url: "https://zenquotes.io/api/random/[your_key]",
-          params: {
-            
+          url: "https://zenquotes.io/api",
+          headers: {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "*",
           },
-
       }).then((response) => {
           console.log(response);
           setIndividualQuote(response.data);
