@@ -3,10 +3,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: rgb(5, 5, 49);
+  background-color: var(--color-Nav);
   border-bottom: goldenrod solid 4px;
   z-index: 100;
   position: fixed;
+  align-items: center;
 }
 
 .upperSite ul {
@@ -29,7 +30,7 @@
   text-decoration: none;
   padding: 0;
   text-transform: uppercase;
-  color: white;
+  color: var(--color-Nav-font);
   font-family: Raleway;
   font-weight: 500;
   font-size: 24px;
@@ -42,7 +43,7 @@
   font-family: "Arial", Times, serif;
 }
 
-i {
+.upperSite i {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   background-size: cover;
@@ -62,6 +63,7 @@ i {
   width: 60px;
   height: 60px;
   cursor: pointer;
+  margin-right: 50px;
 }
 
 .themeClick:hover {
@@ -86,6 +88,19 @@ i {
   animation: opened 2s;
 }
 
+.open button {
+  animation: appear 2s;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes opened {
   0% {
     width: 0;
@@ -103,13 +118,58 @@ i {
 }
 
 .closed {
-  display: none;
+  width: 0px;
+  height: 100vh;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  top: 80px;
+  background-color: #2c0133;
+  border: goldenrod solid 4px;
+  border-right: none;
+  border-left: none;
+  animation: closed 2s;
 }
 
+.closed button {
+  animation: disapear 2s;
+}
+@keyframes closed {
+  0% {
+    width: 500px;
+  }
+
+  100% {
+    width: 0px;
+  }
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 .rotating {
   transform: rotate(360deg);
 }
 .MusicMenuButton {
   width: 100%;
   height: 75px;
+  font-family: Raleway;
+  font-weight: 600;
+  color: black;
+  font-size: 28px;
+}
+
+.MusicMenuButton:hover {
+  border: black solid 3px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

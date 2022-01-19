@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import './ProductPage.css';
+import Posts from '../firebase/Posts';
 
 const ProductPage = () => { 
     const [individualProducts, setIndividualProduct] = useState({})
@@ -9,8 +10,7 @@ const ProductPage = () => {
 
     const renderTaglistHighlights = () => {
         
-        if (tag_list === undefined || tag_list.length === 0)
-            return <p>Highlights: Unavailable</p>
+        if (tag_list === undefined || tag_list.length === 0); 
         
         else {
             return (
@@ -506,7 +506,7 @@ const ProductPage = () => {
                 
             <div className="lol">
                     <p>USDA Organic</p>
-                    <i class="fa-solid fa-check"></i>
+                    <i className="fa-solid fa-check"></i>
             </div>
     
             )
@@ -606,11 +606,13 @@ const ProductPage = () => {
     }, [itemid.itemid])
 
     const { api_featured_image, description, product_link, brand, name, rating, tag_list, product_colors, price} = individualProducts
-  
+    
+    const page = true; 
+    
     return (
         <div className="wrapperProductPage">
             <div className='ProductPageContainer'>
-                <div className="imageContainerProductPage">
+                <div className="imageContainerProductPage2">
                     <img src={api_featured_image} alt={`${name}`} />
                 </div>
                 <div className="paragrapghContainerProductPage">
@@ -619,10 +621,13 @@ const ProductPage = () => {
                     <p className="productPageParagraph DescriptionProduct">{`${description}`.replaceAll(`</li>`, '').replaceAll(`<li>`, '').replaceAll(`<ul>`, '').replaceAll(`</ul>`, '').replaceAll(`</strong>`,'').replaceAll(`<strong>`, '')};</p>
                     {renderPrice()}
                     {renderRating()}
-                    <p><Link to="/API">Click to Go Back to Store</Link></p>
+                    <p className='storeLink'><Link to="/API">Click to Go Back to Store</Link></p>
                 </div>
                 {renderColors()}
                 {renderTaglistHighlights()}
+                <div className='PostWrapper'>
+                    <Posts page={page} passedprops={itemid.itemid}/>
+                </div>  
             </div>
       </div>
     );

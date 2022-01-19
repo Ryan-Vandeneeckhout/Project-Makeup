@@ -8,8 +8,8 @@ function ProductItemCreator(props) {
             return <p>Rating: Unavailable.</p>
         
         else {
-        
-            return <p>Rating: {props.rating} Stars.</p>
+            let Z = parseFloat(`${props.rating}`).toFixed(2);
+            return <p>Rating: {Z} Stars.</p>
         
         }
     }
@@ -41,14 +41,15 @@ function ProductItemCreator(props) {
         
         }
     }
+
     return (
-        <li>
+        <li >
             <div className="showContainer product">
                 <div className="image">
                 <img src={props.imagealt ? props.imagealt : null} alt="Something Went Wrong"/>
                 </div>
                 <div className="info-content">
-                    <h3 className="productHeadingName">{`${props.name}`.replaceAll(`&trade;`, '').replaceAll('<BR>', ' ')};</h3>
+                    <h3 className="productHeadingName">{`${props.name}`.replaceAll(`&trade;`, '').replaceAll('<BR>', ' ')}</h3>
                     {renderProductType()}
                     <p className="productBrandName">Brand Name: {props.brandname} {props.coloursProduct}</p>
                     {renderPrice()}

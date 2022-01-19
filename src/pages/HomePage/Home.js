@@ -25,6 +25,8 @@ setTimeout(() => {
 ChangeProduct(); 
   
 }, 10000);
+
+const passedprops = "makeupposts";
   
 const ChangeProductArrayOne = () => {
   
@@ -33,7 +35,7 @@ const ChangeProductArrayOne = () => {
   document.getElementById("imageGirlContainer").classList.remove("look");
   document.getElementById("buttonActiveOne").classList.add("buttonActive");
   document.getElementById("buttonActiveTwo").classList.remove("buttonActive");
-
+  document.getElementById("productArrivalsTaglineHeading").innerText = "Unlock your inner Glamour with our New Product Lines";
   }
 
 const ChangeProductArrayTwo = () => {
@@ -43,6 +45,7 @@ const ChangeProductArrayTwo = () => {
   document.getElementById("imageGirlContainer").classList.add("look");
   document.getElementById("buttonActiveTwo").classList.add("buttonActive");
   document.getElementById("buttonActiveOne").classList.remove("buttonActive");
+  document.getElementById("productArrivalsTaglineHeading").innerText = "Be Bold, Be Fierce with Our Newest Products";
 
   
 }
@@ -53,6 +56,7 @@ const ChangeProductArrayTwo = () => {
       document.getElementById("imageGirlContainer").classList.add("look");
       document.getElementById("buttonActiveTwo").classList.add("buttonActive");
       document.getElementById("buttonActiveOne").classList.remove("buttonActive");
+      document.getElementById("productArrivalsTaglineHeading").innerText = "Be Bold, Be Fierce with Our Newest Products";
       setArrayOne(arrayOne = false);
       setArrayTwo(arrayTwo = true);
 
@@ -65,11 +69,13 @@ const ChangeProductArrayTwo = () => {
       document.getElementById("imageGirlContainer").classList.remove("look");
       document.getElementById("buttonActiveTwo").classList.remove("buttonActive");
       document.getElementById("buttonActiveOne").classList.add("buttonActive");
+      document.getElementById("productArrivalsTaglineHeading").innerText = "Unlock your inner Glamour with our New Product Lines";
       
     }
   
  
   }
+  const page = false; 
 
   return (
     <section>
@@ -77,14 +83,14 @@ const ChangeProductArrayTwo = () => {
        <Banner/>
         <div className="storeFrontPicturesContainer">
           <div className="tagLine">
-            <h2>Unlock your inner Glamour with our New Product Lines</h2>
+            <h2 id="productArrivalsTaglineHeading">Unlock your inner Glamour with our New Product Lines</h2>
           </div>
           <div className="imageGirlContainer" id="imageGirlContainer">
             <div className={`ArrayOne${arrayOne ? " show" : " hide"}`} >
-              <Posts ArrayLength={FirstArrayValue} ArrayLength2={FirstArrayValue2}/>
+              <Posts page={page} passedprops={passedprops} ArrayLength={FirstArrayValue} ArrayLength2={FirstArrayValue2}/>
             </div>
             <div className={`ArrayTwo${arrayTwo ? " show" : " hide"}`} >
-              <Posts ArrayLength={SecondArrayValue} ArrayLength2={SecondArrayValue2}/>
+              <Posts page={page} passedprops={passedprops} ArrayLength={SecondArrayValue} ArrayLength2={SecondArrayValue2}/>
             </div>
             <div className="h3BeautyContainerHeading">
               <div className="buttonLines">

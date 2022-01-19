@@ -6,7 +6,7 @@ const Banner = () => {
         <div className="homePageTitleContainer">
             <h1>Endless W Demands</h1>
             <h2>The Makeup SuperStore for All of Us</h2>
-            <QuotesApi/>
+            <QuotesApi />
         </div>
     )
 }

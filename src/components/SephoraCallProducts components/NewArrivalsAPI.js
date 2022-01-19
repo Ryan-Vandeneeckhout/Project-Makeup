@@ -18,7 +18,7 @@ const NewArrivals = (props) => {
                 <ul className="sephoraList">
                     {products.slice(0, 5).map((product) => {
                         return (
-                            <Link to={`/sephora/${product.productId}`}>
+                            <Link to={`API/sep/${product.currentSku.skuId}/${product.productId}`}>
                                 <li className="sephoraProductItem" key={product.productId}>
                                     <img
                                         src={product.image250}
@@ -53,7 +53,7 @@ const NewArrivals = (props) => {
           },
           headers: {
               "x-rapidapi-host": "sephora.p.rapidapi.com",
-              "x-rapidapi-key": "b9fdf11926msh448274a57298336p1d27b9jsna88a18e6c927",
+              "x-rapidapi-key": "bef65ebecamshb62b31389866b8bp178f1ejsnbc915ec66b48",
           },
       }).then((response) => {
           console.log(response);

@@ -16,9 +16,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 600px;
+  margin-top: 100px;
+  border-radius: 25px;
+  flex-direction: column;
+}
+.imageContainerProductPage2 {
+  margin-top: 100px;
 }
 .imageContainerProductPage img {
-  width: 300px;
+  width: 400px;
   height: 400px;
 }
 .paragrapghContainerProductPage {
@@ -54,6 +61,7 @@
 .coloursWrapper {
   display: flex;
   flex-wrap: wrap;
+  width: 50%;
 }
 .colourItem {
   padding: 0;
@@ -90,13 +98,13 @@
 }
 
 .taglist .lol {
-  border: solid black 5px;
+  outline: solid black 5px;
   width: 250px;
   text-align: center;
 }
 
 .taglist .No {
-  border: solid black 5px;
+  outline: solid black 5px;
   width: 250px;
   text-align: center;
 }
@@ -110,8 +118,21 @@
 .productPageBuyNowLink:hover {
   color: blue;
 }
+.storeLink a {
+  text-decoration: none;
+  color: black;
+  font-family: "Lato";
+  font-size: 20px;
+}
 
+.storeLink:hover a {
+  color: green;
+}
 .productPageSubHeading {
   font-family: "Lato";
   font-size: 24px;
+}
+.SeptPrice {
+  font-family: Raleway;
+  font-size: 14px;
 }

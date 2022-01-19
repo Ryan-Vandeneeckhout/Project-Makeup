@@ -18,36 +18,36 @@ export const SongListMap = [
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB2',
+        music: 'SB3',
         songName: '',
         hex_value: ' #FFFD01', 
 
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB2',
-        songName: '',
+        music: 'SB4',
+        songName: 'Hot Like Wow',
         hex_value: '#66FF00', 
 
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB2',
-        songName: '',
+        music: 'SB5',
+        songName: 'Suddenly I can See',
         hex_value: '#0165FC', 
 
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB2',
-        songName: '',
+        music: 'SB6',
+        songName: 'Warriors of the World',
         hex_value: '#6F00FE', 
 
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB2',
-        songName: '',
+        music: 'SB5',
+        songName: 'Radio Music: ',
         hex_value: '#AD0AFD', 
 
     },

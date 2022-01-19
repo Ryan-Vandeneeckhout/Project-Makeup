@@ -1,22 +1,22 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './NavigationTop.css'
-import Themechanger  from './Themechanger'; 
 
-const NavigationTop = () => {
+const NavigationTop = (props) => {
   
-  let count = 0; 
-
   return (
     <nav className='upperSite' id="upperSite">
         <ul>
           <li ><Link to="/">Home</Link></li>
-          <li ><Link to="/API">API</Link></li>
-          <li ><Link to="/BeautyUnder25">Beauty Under <span className='NavNumberFix'>$25</span></Link></li>    
-          <li ><Link to="/StoreCatalogue">Store Catalogue</Link></li>
-        <Themechanger count={count}/>
-        </ul>
+          <li ><Link to="/API">Store Catalogue</Link></li>
+          <li ><Link to="/AboutPage">About Page</Link></li>    
+          <button onClick={props.ChangeStateFunction}  className={`themeClick${props.showbox ? " rotating" : " not"}`}>
+            <i className={`${props.showbox ? "fas fa-bahai" : "fas fa-times"}`}></i>
+          </button>
+      </ul>
+    
     </nav>
+    
     );
   };
   

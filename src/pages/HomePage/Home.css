@@ -14,25 +14,19 @@ h1 {
   font-family: Raleway;
   -moz-background-clip: text;
   -webkit-background-clip: text;
-
   background-clip: text;
   color: transparent;
   background-image: url("../images/globalImages/de6ii8x-2a4d1f2c-c4c2-45c4-ba68-966b0e9dad2e.gif");
 }
 
-h2 {
+.homePageTitleContainer h2 {
   font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
   font-family: Raleway;
-  background-size: cover;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: white;
-  stroke: white;
+  -webkit-text-stroke-color: var(--font-color-white);
+  stroke: var(--font-color-white);
   stroke-width: 2px;
-  background-clip: text;
-  color: transparent;
-  background-image: url("../images/globalImages/rainbowText.gif");
+  color: var(--font-color-white);
 }
 .homePageTitleContainer {
   display: flex;
@@ -44,9 +38,10 @@ h2 {
   border-top: none;
   border-left: none;
   border-right: none;
-  background-color: black;
+  background-color: var(--color-Banner);
   color: white;
   height: 500px;
+  padding-top: 3%;
 }
 .storeFrontPicturesContainer {
   width: 100%;
@@ -55,7 +50,7 @@ h2 {
   align-items: center;
   justify-content: center;
   color: gold;
-  background-color: rgb(191, 20, 39);
+  background-color: var(--colour-storeFrontPictures);
   border-bottom: goldenrod solid 5px;
 }
 .tagLine {
@@ -101,13 +96,21 @@ h2 {
   transform: scale(1.05);
   cursor: pointer;
 }
+
 .h3BeautyContainerHeading {
   width: 100%;
   display: flex;
+
   text-align: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+h2 {
+  font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
+}
+#productArrivalsTaglineHeading {
+  color: white;
 }
 .imageGirlContainer h3 {
   color: red;

@@ -9,3 +9,9 @@
   height: 70vh;
   background-color: rgb(32, 32, 32);
 }
+
+.sephoraContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

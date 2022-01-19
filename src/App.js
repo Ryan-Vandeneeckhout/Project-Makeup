@@ -1,26 +1,49 @@
 import './App.css';
 import HomePage from './pages/HomePage/Home';
 import ProductPage from './pages/ProductPage';
+import AboutPage from './AboutPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserStoreInputCallAPIAndStoreItemCointainer from './components/API components/Store Components/API';
 import NavigationTop from './components/Navigation/NavigationTop';
 import BottomSiteSectionContainer from './components/BottomOfSiteComponents/BottomSiteSection';
+import PlayPauseMusicButton from './PlayPauseMusicButton';
+import ScrollUpButton from './components/Global Buttons/ScrollUpButton';
+import SephoaraPage from "./SephoaraPage"; 
+import Themechanger from './components/Navigation/Themechanger';
+import { useState } from 'react';
 
 const App = () => {
 
+  let [Showbox, setShowBox] = useState(false);
+
+  const ChangeStateFunction = () => {
+
+    if (Showbox === false) {
+      setShowBox(Showbox = true);
+    }
+
+    else { 
+      setShowBox(Showbox = false)
+    }
+
+  }
+  
   return (
     <div className='App'>
       <BrowserRouter>
-      <NavigationTop/>
+        <NavigationTop ChangeStateFunction={ChangeStateFunction} showbox={Showbox} />
+        <Themechanger showbox={Showbox}/>
         <Routes>
           <Route extact path='/' element={<HomePage />}/>
           <Route extact path='/API' element={<UserStoreInputCallAPIAndStoreItemCointainer />} />
+          <Route extact path='/AboutPage' element={<AboutPage />} />
           <Route path="/:itemid" element={<ProductPage />} />
-          <Route path="/sephora/:productproductId" element={<UserStoreInputCallAPIAndStoreItemCointainer />} />
+          <Route path="API/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
         </Routes>
-        <BottomSiteSectionContainer/>
+        <PlayPauseMusicButton />
+        <ScrollUpButton/>
+        <BottomSiteSectionContainer />
       </BrowserRouter>
-      
    </div>
   )
 }

@@ -1,61 +1,37 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./Quotes.css"
 
 const QuotesApi = () => {
-    
-    const renderQuote = () => {
 
-        if (quotes === undefined || quotes.length === 0 || quotes === null) {
-        }
-    
-        else {
-    
-            return (
-          
-                <ul className="lol">
-                    
-                    {quotes.slice(0, 1).map((quotes) => {
-                        return (
-                           
-                            <p>{quotes.a}</p>
-                        );
-                    })}
-                </ul>
-            );
-        }
-    };
-
-    const [individualQuote, setIndividualQuote] = useState({});
+    const [quotes, setQuotes] = useState({});
 
     useEffect(() => {
 
       axios({
-          method: "GET",
-          url: "https://zenquotes.io/api",
-          headers: {
-            "Access-Control-Allow-Headers" : "Content-Type",
-            "Access-Control-Allow-Origin": "*",
-          },
+        method: "GET",
+        url: "https://api.quotable.io/random",
+          
+        params: {
+          maxLength: 140, 
+        }
+        
       }).then((response) => {
           console.log(response);
-          setIndividualQuote(response.data);
+          setQuotes(response.data);
       
       }).catch(err => {
           if (err.response) { 
                 
-            }
+        }
+          
       })
       
   }, []);
 
-  const { quotes } = individualQuote;
+  const { content, author } = quotes;
 
-    return (
-        
-        <div className="">{renderQuote()}</div>
-    
-    );
-    
+    return <div><h3 className="titleQuote">{content} - {author}</h3></div>;
 };
 
 export default QuotesApi;

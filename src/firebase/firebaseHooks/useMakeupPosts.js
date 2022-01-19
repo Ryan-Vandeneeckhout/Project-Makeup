@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../config";
-
-
 import { collection, onSnapshot } from 'firebase/firestore'
+
 export const useCollection = (c) => {
 
     const [posts, setPosts] = useState(null)
