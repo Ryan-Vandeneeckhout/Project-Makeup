@@ -14,6 +14,9 @@
   width: 100%;
   padding: 0 200px;
 }
+.postFormWrapper {
+  text-align: center;
+}
 .postFormWrapper textarea {
   height: 200px;
 }
@@ -44,10 +47,16 @@
   padding: 0;
 }
 .postReviewsOne p {
-  font-family: "Lato";
   font-size: 24px;
 }
-
+.postReviewsOne {
+  font-family: "Lato";
+  width: 100%;
+  border: lightgray 1px solid;
+  padding: 25px 100px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+}
 .postFormWrapper {
   margin-bottom: 50px;
 }
@@ -64,4 +73,30 @@
 }
 #sliderPost {
   padding: 0;
+}
+#lol {
+  color: black;
+  font-size: 28px;
+  font-family: Raleway;
+  text-align: center;
+  color: red;
+  text-transform: capitalize;
+  margin: 20px;
+}
+@media only screen and (max-width: 825px) {
+  .postFormWrapper {
+    padding: 0;
+    margin: 0;
+  }
+  .PostWrapper {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .postReviewsOne {
+    padding: 40px;
+  }
+  .productReviewTitleContianer {
+    margin-bottom: 40px;
+  }
 }

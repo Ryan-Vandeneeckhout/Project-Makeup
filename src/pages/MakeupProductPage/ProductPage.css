@@ -23,6 +23,17 @@
 }
 .imageContainerProductPage2 {
   margin-top: 100px;
+  width: 300px;
+  height: 400px;
+  border: lightgray 2px solid;
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.imageContainerProductPage2 img {
+  height: 100%;
+  width: 100%;
 }
 .imageContainerProductPage img {
   width: 400px;
@@ -30,7 +41,7 @@
 }
 .paragrapghContainerProductPage {
   width: 50%;
-  padding: 5%;
+  margin-top: 100px;
 }
 .productPageParagraph {
   font-family: Lato;
@@ -101,12 +112,16 @@
   outline: solid black 5px;
   width: 250px;
   text-align: center;
+  background-color: green;
+  color: white;
 }
 
 .taglist .No {
   outline: solid black 5px;
+  color: white;
   width: 250px;
   text-align: center;
+  background-color: red;
 }
 .productPageBuyNowLink {
   text-decoration: none;
@@ -135,4 +150,40 @@
 .SeptPrice {
   font-family: Raleway;
   font-size: 14px;
+}
+.imageProductPage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 825px) {
+  .imageProductPage {
+    width: 100%;
+  }
+  .paragrapghContainerProductPage {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .productParagraph {
+    text-align: left;
+  }
+  .productPageParagraph {
+    text-align: left;
+  }
+  .imageContainerProductPage2 {
+    margin-top: 120px;
+    margin-bottom: 0px;
+  }
+  .coloursWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .taglist {
+    display: none;
+  }
 }

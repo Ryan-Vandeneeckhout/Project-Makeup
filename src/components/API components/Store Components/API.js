@@ -16,8 +16,10 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
   
   const [ProductItem, setProductItem] = useState([]);
   const [Sephora, setSephora] = useState([]);
+
   let keyz = ["8d6e89e079msh65eed6ce5ddd3dbp169916jsn84600802a3f3", "4148b818d4msh2ca5933b5ea1ab5p1b32c4jsnde65d6e0b9f8"]; 
   let newArrivalsProductLine = keyz[Math.floor(Math.random() * keyz.length)];
+  
   function ren() {
     let queryType = ""; 
     let query = document.querySelector("#fname").value;
@@ -148,9 +150,7 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
   const tagArray = (event) => {  
 
     if (!ary.includes(event.target.value)) {
-      let filteredAry = [ary.push(`${event.target.value}`)];
-      console.log(filteredAry);
-      console.log(ary);     
+      ary.push(`${event.target.value}`);    
       APICallFunction(); 
      
       document.getElementById(event.target.value).classList.add("clickedTagButton");
@@ -163,12 +163,14 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
       document.getElementById(event.target.value).classList.remove("clickedTagButton");
       
       if (ary.length !== 0) {
-        
         APICallFunction(); 
         console.log(ary);
 
       }
-     
+      if (ary.length === 0) { 
+
+      }
+
     }
   }
   const APICalls = () => {
@@ -241,7 +243,7 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
           <TaglistInput tagArray={tagArray}/>
         </form>
         <div className="ProductListDivContainer" id="ProductListDivContainer">
-          <ul className="ProductList">
+          <ul id="ProductList" className="ProductList">
 
             {ProductItem.map((item) => {
               return (

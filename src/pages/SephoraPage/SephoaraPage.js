@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Posts from "./firebase/Posts";
+import Posts from "../../firebase/Posts";
 
 const SephoaraPage = () => {
     const productscurrentSkuskuId = useParams()

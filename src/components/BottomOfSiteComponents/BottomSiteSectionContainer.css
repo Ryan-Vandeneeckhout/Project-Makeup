@@ -150,3 +150,45 @@ textarea {
   flex-direction: row;
   padding-bottom: 50px;
 }
+.formContainer {
+  width: 100%;
+}
+@media only screen and (max-width: 825px) {
+  .contactWrapper {
+    flex-direction: column;
+  }
+  .contactMethods,
+  .formContainer {
+    width: 100%;
+    border: none;
+    margin-top: 2%;
+  }
+  .bottomSite .formContainer {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 clamp(0rem, -0.8649rem + 4.3243vw, 4rem);
+  }
+  .credits {
+    text-align: center;
+    line-height: 29px;
+  }
+  .bottomSite h3 {
+    font-size: clamp(2rem, 1.625rem + 1.6667vw, 2.5rem);
+    text-align: center;
+  }
+  .bottomSite h2 {
+    font-size: clamp(2.5rem, 2.125rem + 1.6667vw, 3rem);
+    padding: 40px 0;
+  }
+  .iconList {
+    padding-bottom: 40px;
+  }
+
+  .iconList i {
+    color: gold;
+  }
+
+  .iconList i:hover {
+    color: white;
+  }
+}

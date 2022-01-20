@@ -1,4 +1,5 @@
 import QuotesApi from "./QuotesAPI"; 
+import './Banner.css'
 
 const Banner = () => {
     

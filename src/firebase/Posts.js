@@ -7,7 +7,7 @@ export default function Posts(props) {
     
     let Check = props.passedprops; 
     let page = props.page; 
-
+    let Products = props.individualProducts;
     const { posts } = useCollection(`${Check}`)
     
     const FirstArrayValue = props.ArrayLength; 
@@ -21,7 +21,7 @@ export default function Posts(props) {
             
             return ( 
              <React.Fragment>
-                <PostForm passedprop={Check} />
+                    <PostForm Products={Products} passedprop={Check} />
                 <div className="productReviewTitleContianer"> 
                     <h2 className="productReviewh2">Product Reviews</h2>
                 </div> 

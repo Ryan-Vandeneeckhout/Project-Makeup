@@ -7,7 +7,10 @@ class Themechanger extends Component {
 
   state = {
 
-    play: false
+    play: false,
+    menu: false, 
+    musicmenu: false,
+    thememenu: false, 
 
   }
 

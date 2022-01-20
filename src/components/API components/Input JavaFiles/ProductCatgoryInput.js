@@ -1,3 +1,4 @@
+import React from "react"
 import { ProductCatogoriesSelectedMap } from "../Input maps/ProductCatogoriesSelectedMap"
 const ProductCatgoryInput = (props) => {
     
@@ -90,13 +91,9 @@ const ProductCatgoryInput = (props) => {
 
     return (
        
-        <div>
-            
-        {renderProductCat()}
-        
-        </div>
-       
-       
+        <React.Fragment>
+            {renderProductCat()}
+        </React.Fragment>
     );
   };
   

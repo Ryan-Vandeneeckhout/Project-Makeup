@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Quotes.css"
 
 const QuotesApi = () => {
@@ -17,8 +17,7 @@ const QuotesApi = () => {
         }
         
       }).then((response) => {
-          console.log(response);
-          setQuotes(response.data);
+        setQuotes(response.data);
       
       }).catch(err => {
           if (err.response) { 
@@ -31,7 +30,7 @@ const QuotesApi = () => {
 
   const { content, author } = quotes;
 
-    return <div><h3 className="titleQuote">{content} - {author}</h3></div>;
+    return <React.Fragment><h3 className="titleQuote">{content} - {author}</h3></React.Fragment>;
 };
 
 export default QuotesApi;

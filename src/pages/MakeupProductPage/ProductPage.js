@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import './ProductPage.css';
-import Posts from '../firebase/Posts';
+import Posts from '../../firebase/Posts';
 
 const ProductPage = () => { 
     const [individualProducts, setIndividualProduct] = useState({})
@@ -51,6 +51,7 @@ const ProductPage = () => {
             
                 <div className="lol">
                     <p>Vegan</p>
+                    {renderYes()}
                 </div>
 
             )
@@ -77,7 +78,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Canadain</p>
+                    <p>Canadain</p>
+                    {renderYes()}
             </div>
     
             )
@@ -98,10 +100,14 @@ const ProductPage = () => {
     }
     const renderNO = () => { 
 
-        return <p>Nope</p>
+        return <p>Not Approved</p>
 
     }
-    
+    const renderYes = () => { 
+
+        return <p>Approved</p>
+
+    }
     const renderCertClean = () => {
         
         if (tag_list.includes('Cert Clean')) {
@@ -109,7 +115,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Cert Clean</p>
+                    <p>Cert Clean</p>
+                    {renderYes()}
             </div>
     
             )
@@ -135,7 +142,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Chemical Free</p>
+                    <p>Chemical Free</p>
+                    {renderYes()}
             </div>
     
             )
@@ -160,7 +168,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Dairy Free</p>
+                    <p>Dairy Free</p>
+                    {renderYes()}
             </div>
     
             )
@@ -186,7 +195,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Purpicks</p>
+                    <p>Purpicks</p>
+                    {renderYes()}
             </div>
     
             )
@@ -212,7 +222,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>EWG Verified</p>
+                    <p>EWG Verified</p>
+                    {renderYes()}
             </div>
     
             )
@@ -238,7 +249,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>EcoCert</p>
+                    <p>EcoCert</p>
+                    {renderYes()}
             </div>
     
             )
@@ -264,7 +276,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Fair Trade</p>
+                    <p>Fair Trade</p>
+                    {renderYes()}
             </div>
     
             )
@@ -290,7 +303,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Gluten Free</p>
+                    <p>Gluten Free</p>
+                    {renderYes()}
             </div>
     
             )
@@ -318,7 +332,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Hypoallergenic</p>
+                    <p>Hypoallergenic</p>
+                    {renderYes()}
             </div>
     
             )
@@ -344,7 +359,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Natural</p>
+                    <p>Natural</p>
+                    {renderYes()}
             </div>
     
             )
@@ -370,7 +386,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>No Talc</p>
+                    <p>No Talc</p>
+                    {renderYes()}
             </div>
     
             )
@@ -396,7 +413,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Non-Gmo</p>
+                    <p>Non-Gmo</p>
+                    {renderYes()}
             </div>
     
             )
@@ -424,7 +442,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Organic</p>
+                    <p>Organic</p>
+                    {renderYes()}
             </div>
     
             )
@@ -451,7 +470,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Peanut Free Product</p>
+                    <p>Peanut Free Product</p>
+                    {renderYes()}
             </div>
     
             )
@@ -478,7 +498,8 @@ const ProductPage = () => {
             return (
                 
             <div className="lol">
-                <p>Sugar Free</p>
+                    <p>Sugar Free</p>
+                    {renderYes()}
             </div>
     
             )
@@ -506,7 +527,7 @@ const ProductPage = () => {
                 
             <div className="lol">
                     <p>USDA Organic</p>
-                    <i className="fa-solid fa-check"></i>
+                    {renderYes()}
             </div>
     
             )
@@ -535,7 +556,7 @@ const ProductPage = () => {
                 
             <div className="lol">
                 <p>Alcohol Free</p>
-                <i className="fas fa-rocket"></i>
+                {renderYes()}
             </div>
     
             )
@@ -556,7 +577,7 @@ const ProductPage = () => {
     }
     const renderRating = () => {
         if(rating === null)
-            return <p className='productParagraph'>Rating: Sorry No Rating Currently Available. Be the First To Rate!</p>
+            return <p className='productParagraph'>Rating: Unfortunately, there is No Rating Currently Available. Be the First To Rate!</p>
         
         else {
             return <p className='productParagraph'>Rating: {rating} Stars.</p>
@@ -575,8 +596,7 @@ const ProductPage = () => {
         }
     }
     const renderColors = () => {
-        if(product_colors === undefined || product_colors.length === 0)
-            return <p>Colours: Unavailable</p>
+        if (product_colors === undefined || product_colors.length === 0);
         
         else {
             return (
@@ -609,24 +629,34 @@ const ProductPage = () => {
     
     const page = true; 
     
+    let arry = [];
+    
+    const Pushtoarray = () => {
+        arry[0] = [`${individualProducts}`];    
+        console.log(arry)
+
+    }
     return (
         <div className="wrapperProductPage">
             <div className='ProductPageContainer'>
-                <div className="imageContainerProductPage2">
-                    <img src={api_featured_image} alt={`${name}`} />
+                <div className='imageProductPage'>
+                    <div className="imageContainerProductPage2">
+                        <img src={api_featured_image} alt={`${name}`} />
+                    </div>
                 </div>
                 <div className="paragrapghContainerProductPage">
                     <h3 className="nameProduct">{name} W</h3>
                     <h4 className='productPageSubHeading'>Brought to you by - {brand}</h4>
-                    <p className="productPageParagraph DescriptionProduct">{`${description}`.replaceAll(`</li>`, '').replaceAll(`<li>`, '').replaceAll(`<ul>`, '').replaceAll(`</ul>`, '').replaceAll(`</strong>`,'').replaceAll(`<strong>`, '')};</p>
+                    <p className="productPageParagraph">{`${description}`.replaceAll(`</li>`, '').replaceAll(`<li>`, '').replaceAll(`<ul>`, '').replaceAll(`</ul>`, '').replaceAll(`</strong>`,'').replaceAll(`<strong>`, '')};</p>
                     {renderPrice()}
                     {renderRating()}
                     <p className='storeLink'><Link to="/API">Click to Go Back to Store</Link></p>
+                    <button onClick={Pushtoarray}>Click to add to Favs</button>
                 </div>
                 {renderColors()}
                 {renderTaglistHighlights()}
                 <div className='PostWrapper'>
-                    <Posts page={page} passedprops={itemid.itemid}/>
+                    <Posts individualProducts={individualProducts} page={page} passedprops={itemid.itemid}/>
                 </div>  
             </div>
       </div>

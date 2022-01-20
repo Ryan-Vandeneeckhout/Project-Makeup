@@ -6,8 +6,8 @@ export default function PriceSliderInput () {
 
   return (
     <div className="slider-parent">
-          <input id="price" placeholder="Search for Products" type="range" min="0" max="75" value={`${value}`} onChange={({ target: { value: radius } }) => {onChange(radius)}}/>
-        <input id="slider" placeholder={`Price less than $${value} Dollars`}></input>
+          <input className="sliderStore" id="price" placeholder="Search for Products" type="range" min="0" max="75" value={`${value}`} onChange={({ target: { value: radius } }) => {onChange(radius)}}/>
+        <input className="storeSlider" id="slider" placeholder={`Price less than $${value} Dollars`}></input>
     </div>
   );
 }

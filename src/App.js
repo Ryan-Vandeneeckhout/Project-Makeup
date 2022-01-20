@@ -1,14 +1,14 @@
 import './App.css';
 import HomePage from './pages/HomePage/Home';
-import ProductPage from './pages/ProductPage';
+import ProductPage from './pages/MakeupProductPage/ProductPage';
 import AboutPage from './AboutPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserStoreInputCallAPIAndStoreItemCointainer from './components/API components/Store Components/API';
 import NavigationTop from './components/Navigation/NavigationTop';
 import BottomSiteSectionContainer from './components/BottomOfSiteComponents/BottomSiteSection';
-import PlayPauseMusicButton from './PlayPauseMusicButton';
+import PlayPauseMusicButton from './components/Global Buttons/PlayPauseMusicButton';
 import ScrollUpButton from './components/Global Buttons/ScrollUpButton';
-import SephoaraPage from "./SephoaraPage"; 
+import SephoaraPage from "./pages/SephoraPage/SephoaraPage"; 
 import Themechanger from './components/Navigation/Themechanger';
 import { useState } from 'react';
 

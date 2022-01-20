@@ -7,17 +7,18 @@ export default function PostForm(props) {
   const [newPost, setNewPost] = useState("");
   const [postContainer, setPostContainer] = useState("");
 
-  let hello = props.passedprop;
-
+  let DataBaseDocProps = props.passedprop;
+  let Data = props.Products; 
   const [value, setValue] = useState(1);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await addDoc(collection(db, `${hello}`), {
+    await addDoc(collection(db, `${DataBaseDocProps}`), {
       name: newPost,
       post: postContainer,
       rating: value,
+      Data,
     });
     setNewPost("");
     setPostContainer("");
@@ -36,7 +37,7 @@ export default function PostForm(props) {
     }
     if (radius > 2) {
       
-      document.getElementById("lol").style.color = "yellow"; 
+      document.getElementById("lol").style.color = "goldenrod"; 
     }
     if (radius > 3) {
       
@@ -51,8 +52,9 @@ export default function PostForm(props) {
  }
   return (
     <div className="postFormWrapper">
-      <h2>Write a Product Review!</h2>
-   
+      <div className="productReviewTitleContianer"> 
+        <h2 className="productReviewh2">Write a Product Review!</h2>
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           <input
@@ -60,7 +62,7 @@ export default function PostForm(props) {
             type="text"
             onChange={(e) => setNewPost(e.target.value)}
             value={newPost}
-            placeholder="your name:"
+            placeholder="Name:"
           />
         </label>
         <label>
@@ -76,7 +78,7 @@ export default function PostForm(props) {
         </label>
 
         <div>
-        <h3 id="lol" >I Rate this Product a {value}</h3>
+        <h3 id="lol" >I Rate this Product {value} Stars!</h3>
           <input id="sliderPost"
             type="range"
             min={1}
