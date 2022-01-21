@@ -56,3 +56,7 @@ a {
     padding: 0;
   }
 }
+.ProductListDivContainer {
+  min-height: 100vh;
+  height: 100%;
+}

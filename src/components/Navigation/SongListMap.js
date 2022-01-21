@@ -12,14 +12,14 @@ export const SongListMap = [
     {
         MusicMenuButton: 'MusicMenuButton',
         music: 'SB2',
-        songName: '',
+        songName: 'Olivia Holt - Carry On (from Disneynature "Bears")',
         hex_value: '#FF7034', 
 
     },
     {
         MusicMenuButton: 'MusicMenuButton',
         music: 'SB3',
-        songName: '',
+        songName: `Why Don't We - 8 Letters`,
         hex_value: ' #FFFD01', 
 
     },
@@ -46,7 +46,7 @@ export const SongListMap = [
     },
     {
         MusicMenuButton: 'MusicMenuButton',
-        music: 'SB5',
+        music: 'SB7',
         songName: 'Radio Music: ',
         hex_value: '#AD0AFD', 
 

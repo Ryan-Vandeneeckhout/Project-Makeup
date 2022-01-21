@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import './ProductPage.css';
 import Posts from '../../firebase/Posts';
+import Favourites from '../../firebase/FavouritesFirebase';
 
 const ProductPage = () => { 
     const [individualProducts, setIndividualProduct] = useState({})
@@ -628,14 +629,9 @@ const ProductPage = () => {
     const { api_featured_image, description, product_link, brand, name, rating, tag_list, product_colors, price} = individualProducts
     
     const page = true; 
-    
-    let arry = [];
-    
-    const Pushtoarray = () => {
-        arry[0] = [`${individualProducts}`];    
-        console.log(arry)
 
-    }
+    const Good = { brand, name, rating, api_featured_image, price}; 
+
     return (
         <div className="wrapperProductPage">
             <div className='ProductPageContainer'>
@@ -651,7 +647,8 @@ const ProductPage = () => {
                     {renderPrice()}
                     {renderRating()}
                     <p className='storeLink'><Link to="/API">Click to Go Back to Store</Link></p>
-                    <button onClick={Pushtoarray}>Click to add to Favs</button>
+                    <Favourites Good={Good} />
+                 
                 </div>
                 {renderColors()}
                 {renderTaglistHighlights()}

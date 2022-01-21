@@ -72,7 +72,12 @@
   border: solid white 3px;
   cursor: pointer;
 }
-
+.Mainopen {
+  display: flex;
+}
+.Mainclosed {
+  display: none;
+}
 .open {
   width: 500px;
   height: 100vh;
@@ -173,6 +178,11 @@
   color: white;
   cursor: pointer;
 }
+
+.MusicMenu {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 @media only screen and (max-width: 825px) {
   .upperSite ul {
     display: none;
@@ -208,4 +218,23 @@
   .MusicMenuToggle {
     border-left: none;
   }
+}
+.MainMenuToggle {
+  flex-direction: column;
+}
+.youtubeVideo {
+  position: fixed;
+  top: 40%;
+  left: 35%;
+}
+.NotShown {
+  display: none;
+}
+.Showing {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }

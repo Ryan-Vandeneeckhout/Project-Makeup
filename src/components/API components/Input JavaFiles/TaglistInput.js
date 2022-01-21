@@ -6,19 +6,10 @@ class TaglistInput extends React.Component {
     shouldComponentUpdate() {
         return false;
     }
+    pop() {
 
-    buttonBackground = (event) => {
-
-        let buttonSelectedFalse = document.getElementById(event.target.value);
-        buttonSelectedFalse.style.backgroundColor = "gold"; 
-
+        this.myButton.setAttribute("class", "green");
     }
-
-    buttonBackgroundNormalize = (event) => {
-        let buttonSelectedFalse = document.getElementById(event.target.value);
-        buttonSelectedFalse.style.backgroundColor = "whitesmoke"; 
-    }
-    
     render(){
         return (
       
@@ -26,7 +17,8 @@ class TaglistInput extends React.Component {
 
                 {TaglistCatgoryItemsNavList.map((item, index) => {
                     return (
-                        <button id={item.valueTaglistCategory} key={index} onClick={this.props.tagArray} className="tagListButton" value={item.valueTaglistCategory}>{item.valueTaglistCategory}
+                        <button id={item.valueTaglistCategory} ref={button => {
+                            this.myButton = button}} key={index} onClick={this.props.tagArray} className="tagListButton" value={item.valueTaglistCategory}>{item.valueTaglistCategory}
                         </button>
                     );
                 })}

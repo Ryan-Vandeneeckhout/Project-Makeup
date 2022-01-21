@@ -5,10 +5,6 @@
 .product p {
   text-transform: capitalize;
 }
-.ProductListDivContainer {
-  height: 70vh;
-  background-color: rgb(32, 32, 32);
-}
 
 .sephoraContainer {
   display: flex;

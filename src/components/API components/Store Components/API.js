@@ -16,6 +16,8 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
   
   const [ProductItem, setProductItem] = useState([]);
   const [Sephora, setSephora] = useState([]);
+  const [background, setBackground] = useState(false);
+  const [errorAPI, setErrorAPI] = useState('')
 
   let keyz = ["8d6e89e079msh65eed6ce5ddd3dbp169916jsn84600802a3f3", "4148b818d4msh2ca5933b5ea1ab5p1b32c4jsnde65d6e0b9f8"]; 
   let newArrivalsProductLine = keyz[Math.floor(Math.random() * keyz.length)];
@@ -23,7 +25,7 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
   function ren() {
     let queryType = ""; 
     let query = document.querySelector("#fname").value;
-    productListBackgroundDynamic(); 
+    
     if (!BrandCatgory.includes(`${query}`) && `${query}`.length > 3) {
       queryType = "brand";
       calling();
@@ -65,8 +67,6 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
     const branding = document.querySelector("#brand option:checked").value; 
     const ProductTypeSelected = document.querySelector("#productType option:checked").value;
     const ProductCatgorySelected = document.querySelector("#categoryType option:checked").value;
-
-    productListBackgroundDynamic(); 
     
     let Price = ""; 
 
@@ -96,10 +96,15 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
     }).then((jsonResponse) => {
             
     if (jsonResponse.length !== 0) {
-        setProductItem(jsonResponse.data);
+      setProductItem(jsonResponse.data);
+      setBackground(true); 
     }
       
-    })
+    }).catch((error) => {
+      if (error.response) {
+          setErrorAPI('Sorry our API is unable to get the necessary information!')
+      }
+  })
     
   
   }
@@ -130,20 +135,6 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
     
   
   }
-  const productListBackgroundDynamic = () => { 
-    
-    let canvas = document.querySelector("#ProductListDivContainer");
-    
-    if (canvas === null || canvas === undefined);
-
-    else if (ProductItem.map.length !== null || ProductItem.map.length !== undefined || ProductItem.map.length !== 0 || ProductItem.map.length !== "0") {
-           
-      canvas.style.height = "100%";
-      canvas.style.backgroundColor = "black";
-
-    }
-  
-  }
   
   let ary = []; 
 
@@ -168,7 +159,8 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
 
       }
       if (ary.length === 0) { 
-
+        ary = []
+        
       }
 
     }
@@ -242,9 +234,9 @@ function UserStoreInputCallAPIAndStoreItemCointainer() {
         <form onSubmit={handleSubmit} className="taglistForm ">
           <TaglistInput tagArray={tagArray}/>
         </form>
-        <div className="ProductListDivContainer" id="ProductListDivContainer">
+        <div className="ProductListDivContainer" style={background ? { backgroundColor: 'black' } : {backgroundColor: `rgb(32, 32, 32)` }}>
           <ul id="ProductList" className="ProductList">
-
+          <div className="ApiError">{errorAPI}</div>
             {ProductItem.map((item) => {
               return (
                 
