@@ -1,0 +1,13 @@
+.productHeadingName {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.product p {
+  text-transform: capitalize;
+}
+
+.sephoraContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

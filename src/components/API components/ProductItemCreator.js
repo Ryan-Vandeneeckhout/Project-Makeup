@@ -1,30 +1,56 @@
-function Product ( props ) {
+import "./Product Page User Interface CSS Files/ProductItemCreator.css"
+
+function ProductItemCreator(props) {
     
     const renderRating = () => {
-        if(props.rating === null)
+        if(props.rating === null || props.rating === '0.0' || props.price === undefined)
+            
             return <p>Rating: Unavailable.</p>
+        
         else {
-            return <p>Rating: {props.rating} Stars.</p>
+            let Z = parseFloat(`${props.rating}`).toFixed(2);
+            return <p>Rating: {Z} Stars.</p>
+        
+        }
+    }
+   
+    const renderPrice = () => {
+       
+    
+        if (props.price === null || props.price === '0.0')
+
+            return <p className="PriceParagraph">Price: Unavailable.</p>
+
+        else {
+
+            let Z = parseFloat(`${props.price}`).toFixed(2);
+
+            return <p id="productPriceElement" className="productPriceElement">Price: ${Z}</p>
+
         }
     }
 
-    const renderPrice = () => {
+    const renderProductType = () => {
+        if (props.productType === null || props.productType === ' ' || props.productType === undefined || props.productType.length === 0)
+            
+            return 
         
-        if (props.price === null || props.price === '0.0')
-            return <p>Price: Unavailable.</p>
         else {
-            return <p id="productPriceElement" className="productPriceElement">Price: {props.price}</p>
+        
+            return <p className="productName">Product Type: {`${props.productType}`.replaceAll(`_`, ' ')}</p>
+        
         }
     }
+
     return (
         <li >
             <div className="showContainer product">
                 <div className="image">
-                <img src={props.imagealt ? props.imagealt : null} alt={props.image ? props.image : null}/>
+                <img src={props.imagealt ? props.imagealt : null} alt="Something Went Wrong"/>
                 </div>
                 <div className="info-content">
-                    <h3 className="productHeadingName">{props.name}</h3>
-                    <p className="productName">Product Name: {props.productType}</p>
+                    <h3 className="productHeadingName">{`${props.name}`.replaceAll(`&trade;`, '').replaceAll('<BR>', ' ')}</h3>
+                    {renderProductType()}
                     <p className="productBrandName">Brand Name: {props.brandname} {props.coloursProduct}</p>
                     {renderPrice()}
                     {renderRating()}
@@ -34,6 +60,6 @@ function Product ( props ) {
     )
 }
 
-export default Product;
+export default ProductItemCreator;
 
 

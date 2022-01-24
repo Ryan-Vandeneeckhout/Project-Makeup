@@ -1,0 +1,30 @@
+.aboutWrapper {
+  width: 100%;
+  padding: 5%;
+  background-color: rgb(2, 2, 65);
+  color: white;
+}
+.aboutPageContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.aboutPageContent h3 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-family: Raleway;
+  letter-spacing: 1px;
+}
+.AboutPageContainer2 {
+  width: 50%;
+  border: solid gold 5px;
+  padding: 5%;
+  margin-bottom: 50px;
+}
+.AboutPageContainer2 p {
+  font-family: "Lato";
+  font-size: 18px;
+  line-height: 29px;
+  width: 100%;
+  word-wrap: break-word;
+}
